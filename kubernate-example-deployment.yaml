@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernate-example-deployment
+  labels:
+    app: kubernate-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubernate-example
+  template:
+    metadata:
+      labels:
+        app: kubernate-example
+    spec:
+      containers:
+      - name: kubernate-example
+        image: mooh2jj/kubernate-example
+        ports:
+        - containerPort: 80
